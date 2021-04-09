@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var playerCardNumber: Int = 3
+    @State var botCardNumber: Int = 4
+    @StateObject var gameLogic = GameLogic()
+    
     var body: some View {
         ZStack {
             Color.green.ignoresSafeArea()
@@ -19,18 +24,28 @@ struct ContentView: View {
                 
                 Spacer()
                 HStack(spacing: 50) {
-                    Image(uiImage: #imageLiteral(resourceName: "3C"))
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 80, height: 150, alignment: .center)
+                    VStack {
+                        Text("Player")
+                        Image("\(playerCardNumber)C")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 80, height: 150, alignment: .center)
+                    }
                     
-                    Image(uiImage: #imageLiteral(resourceName: "3C"))
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 80, height: 150, alignment: .center)
+                    VStack {
+                        Text("Bot")
+                        Image("\(botCardNumber)C")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 80, height: 150, alignment: .center)
+                    }
                 }
                 Spacer()
-                Button(action: {}, label: {
+                Button(action: {
+                    self.playerCardNumber = Int.random(in: 1...13)
+                    self.botCardNumber = Int.random(in: 1...13)
+                    gameLogic.compare(player: playerCardNumber, bot: botCardNumber)
+                }, label: {
                     Image(uiImage: #imageLiteral(resourceName: "buttons167"))
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -43,13 +58,13 @@ struct ContentView: View {
                     VStack {
                         Text("Player")
                             .padding()
-                        Text("0")
+                        Text("\(gameLogic.playerNumber)").bold()
                     }
                     
                     VStack {
-                        Text("Player")
+                        Text("Bot")
                             .padding()
-                        Text("0")
+                        Text("\(gameLogic.botNumber)").bold()
                     }
                 }
                 Spacer()

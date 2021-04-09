@@ -15,6 +15,7 @@
 		BFB0A6032620141400F3889A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFB0A6012620141400F3889A /* LaunchScreen.storyboard */; };
 		BFB0A60E2620141500F3889A /* WarCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB0A60D2620141500F3889A /* WarCardTests.swift */; };
 		BFB0A6192620141500F3889A /* WarCardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB0A6182620141500F3889A /* WarCardUITests.swift */; };
+		BFB0A62A262024B900F3889A /* gameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB0A629262024B900F3889A /* gameLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		BFB0A6142620141500F3889A /* WarCardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WarCardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB0A6182620141500F3889A /* WarCardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarCardUITests.swift; sourceTree = "<group>"; };
 		BFB0A61A2620141500F3889A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFB0A629262024B900F3889A /* gameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				BFB0A5F62620141200F3889A /* AppDelegate.swift */,
 				BFB0A5F82620141200F3889A /* SceneDelegate.swift */,
 				BFB0A5FA2620141200F3889A /* ContentView.swift */,
+				BFB0A629262024B900F3889A /* gameLogic.swift */,
 				BFB0A5FC2620141400F3889A /* Assets.xcassets */,
 				BFB0A6012620141400F3889A /* LaunchScreen.storyboard */,
 				BFB0A6042620141400F3889A /* Info.plist */,
@@ -268,6 +271,7 @@
 			files = (
 				BFB0A5F72620141200F3889A /* AppDelegate.swift in Sources */,
 				BFB0A5F92620141200F3889A /* SceneDelegate.swift in Sources */,
+				BFB0A62A262024B900F3889A /* gameLogic.swift in Sources */,
 				BFB0A5FB2620141200F3889A /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
