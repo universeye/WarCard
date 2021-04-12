@@ -13,7 +13,7 @@ struct ContentView: View {
     @State private var botCardNumber: Int = 4
     //@StateObject var gameLogic = GameLogic()
     @State var isLoading = false
-    @EnvironmentObject var env: GameLogic
+    @EnvironmentObject private var env: GameLogic
     
     
     var body: some View {
@@ -54,6 +54,8 @@ struct ContentView: View {
                     self.botCardNumber = Int.random(in: 1...13)
                     env.compare(player: playerCardNumber, bot: botCardNumber)
                     print("your number: \(env.playerNumber)")
+                    
+                    
                     if env.playerNumber == 5 {
                         isLoading = true
                     }
@@ -89,7 +91,7 @@ struct ContentView: View {
                 Spacer()
             }
             if isLoading {
-                LoadingView(isLoading: $isLoading)
+                LoadingView(winStatus: .win, winOrLose: "Win", isLoading: $isLoading)
             }
         }
     }
