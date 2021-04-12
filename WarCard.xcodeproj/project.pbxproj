@@ -111,10 +111,8 @@
 			children = (
 				BFB0A5F62620141200F3889A /* AppDelegate.swift */,
 				BFB0A5F82620141200F3889A /* SceneDelegate.swift */,
-				BFB0A5FA2620141200F3889A /* ContentView.swift */,
-				BFD44EFC2623FF750010E908 /* LottieView.swift */,
-				BFD44F01262401780010E908 /* LoadingView.swift */,
 				BFB0A629262024B900F3889A /* gameLogic.swift */,
+				BFD44F06262409EF0010E908 /* View */,
 				BFB0A5FC2620141400F3889A /* Assets.xcassets */,
 				BFD44EF62623FECC0010E908 /* Lottie */,
 				BFB0A6012620141400F3889A /* LaunchScreen.storyboard */,
@@ -156,6 +154,16 @@
 				BFD44EF72623FEDB0010E908 /* 8123-winner.json */,
 			);
 			path = Lottie;
+			sourceTree = "<group>";
+		};
+		BFD44F06262409EF0010E908 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BFB0A5FA2620141200F3889A /* ContentView.swift */,
+				BFD44EFC2623FF750010E908 /* LottieView.swift */,
+				BFD44F01262401780010E908 /* LoadingView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

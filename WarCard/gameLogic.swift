@@ -15,12 +15,29 @@ class GameLogic: ObservableObject {
     func compare(player: Int, bot: Int) {
         if player > bot {
             print("you win")
-            playerNumber += 1
+            if playerNumber > 9 {
+                playerNumber = 0
+                botNumber = 0
+            } else {
+                playerNumber += 1
+            }
         } else if player < bot {
-            botNumber += 1
+            if botNumber > 9 {
+                botNumber = 0
+                playerNumber = 0
+            } else {
+                botNumber += 1
+            }
             print("bot win")
         } else {
             print("draw")
         }
+    }
+    
+    
+    func toZero() {
+        playerNumber = 0
+        botNumber = 0
+        print("ALL Zero: \(playerNumber)")
     }
 }

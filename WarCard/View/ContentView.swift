@@ -11,8 +11,10 @@ struct ContentView: View {
     
     @State private var playerCardNumber: Int = 3
     @State private var botCardNumber: Int = 4
-    @StateObject var gameLogic = GameLogic()
+    //@StateObject var gameLogic = GameLogic()
     @State var isLoading = false
+    @EnvironmentObject var env: GameLogic
+    
     
     var body: some View {
         ZStack {
@@ -50,12 +52,12 @@ struct ContentView: View {
                 Button(action: {
                     self.playerCardNumber = Int.random(in: 1...13)
                     self.botCardNumber = Int.random(in: 1...13)
-                    gameLogic.compare(player: playerCardNumber, bot: botCardNumber)
-                    self.isLoading = true
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                        self.isLoading = false
+                    env.compare(player: playerCardNumber, bot: botCardNumber)
+                    print("your number: \(env.playerNumber)")
+                    if env.playerNumber == 5 {
+                        isLoading = true
                     }
+                    
                 }, label: {
                     Image(uiImage: #imageLiteral(resourceName: "buttons167"))
                         .resizable()
@@ -70,7 +72,7 @@ struct ContentView: View {
                         Text("Player")
                             .font(.title)
                             .padding()
-                        Text("\(gameLogic.playerNumber)")
+                        Text("\(env.playerNumber)")
                             .bold()
                             .font(.title)
                     }
@@ -79,7 +81,7 @@ struct ContentView: View {
                         Text("Bot")
                             .font(.title)
                             .padding()
-                        Text("\(gameLogic.botNumber)")
+                        Text("\(env.botNumber)")
                             .bold()
                             .font(.title)
                     }
@@ -87,7 +89,7 @@ struct ContentView: View {
                 Spacer()
             }
             if isLoading {
-                LoadingView()
+                LoadingView(isLoading: $isLoading)
             }
         }
     }
@@ -95,6 +97,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(GameLogic())
     }
 }
