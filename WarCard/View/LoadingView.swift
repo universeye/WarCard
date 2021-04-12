@@ -9,14 +9,15 @@ import SwiftUI
 
 enum WinStatus: String {
     case win = "8123-winner"
-    case lose = ""
+    case lose = "41294-quiz-guy-loser"
 }
 
 struct LoadingView: View {
     
     var winStatus: WinStatus
     var winOrLose: String = "Win"
-    @Binding var isLoading: Bool
+    @Binding var isWinning: Bool
+    @Binding var isLosing: Bool
     @EnvironmentObject private var env: GameLogic
     
     var body: some View {
@@ -34,7 +35,8 @@ struct LoadingView: View {
                     .cornerRadius(10)
                 
                 Button(action: {
-                    isLoading = false
+                    isWinning = false
+                    isLosing = false
                     env.toZero()
                 }, label: {
                     Text("Replay")
@@ -48,6 +50,6 @@ struct LoadingView: View {
 
 struct LoadingView_Previews: PreviewProvider {
     static var previews: some View {
-        LoadingView(winStatus: .win, isLoading: .constant(true))
+        LoadingView(winStatus: .win, isWinning: .constant(true), isLosing: .constant(false))
     }
 }

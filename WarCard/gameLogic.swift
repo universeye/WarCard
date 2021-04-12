@@ -38,6 +38,6 @@ class GameLogic: ObservableObject {
     func toZero() {
         playerNumber = 0
         botNumber = 0
-        print("ALL Zero: \(playerNumber)")
+        //print("ALL Zero: \(playerNumber)")
     }
 }
