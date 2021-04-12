@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,10 @@
 		BFB0A60E2620141500F3889A /* WarCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB0A60D2620141500F3889A /* WarCardTests.swift */; };
 		BFB0A6192620141500F3889A /* WarCardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB0A6182620141500F3889A /* WarCardUITests.swift */; };
 		BFB0A62A262024B900F3889A /* gameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB0A629262024B900F3889A /* gameLogic.swift */; };
+		BFD44EEF2623FE450010E908 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = BFD44EEE2623FE450010E908 /* Lottie */; };
+		BFD44EF82623FEDB0010E908 /* 8123-winner.json in Resources */ = {isa = PBXBuildFile; fileRef = BFD44EF72623FEDB0010E908 /* 8123-winner.json */; };
+		BFD44EFD2623FF750010E908 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD44EFC2623FF750010E908 /* LottieView.swift */; };
+		BFD44F02262401780010E908 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD44F01262401780010E908 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,9 @@
 		BFB0A6182620141500F3889A /* WarCardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarCardUITests.swift; sourceTree = "<group>"; };
 		BFB0A61A2620141500F3889A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFB0A629262024B900F3889A /* gameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameLogic.swift; sourceTree = "<group>"; };
+		BFD44EF72623FEDB0010E908 /* 8123-winner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "8123-winner.json"; sourceTree = "<group>"; };
+		BFD44EFC2623FF750010E908 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		BFD44F01262401780010E908 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFD44EEF2623FE450010E908 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,8 +112,11 @@
 				BFB0A5F62620141200F3889A /* AppDelegate.swift */,
 				BFB0A5F82620141200F3889A /* SceneDelegate.swift */,
 				BFB0A5FA2620141200F3889A /* ContentView.swift */,
+				BFD44EFC2623FF750010E908 /* LottieView.swift */,
+				BFD44F01262401780010E908 /* LoadingView.swift */,
 				BFB0A629262024B900F3889A /* gameLogic.swift */,
 				BFB0A5FC2620141400F3889A /* Assets.xcassets */,
+				BFD44EF62623FECC0010E908 /* Lottie */,
 				BFB0A6012620141400F3889A /* LaunchScreen.storyboard */,
 				BFB0A6042620141400F3889A /* Info.plist */,
 				BFB0A5FE2620141400F3889A /* Preview Content */,
@@ -139,6 +150,14 @@
 			path = WarCardUITests;
 			sourceTree = "<group>";
 		};
+		BFD44EF62623FECC0010E908 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				BFD44EF72623FEDB0010E908 /* 8123-winner.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,6 +174,9 @@
 			dependencies = (
 			);
 			name = WarCard;
+			packageProductDependencies = (
+				BFD44EEE2623FE450010E908 /* Lottie */,
+			);
 			productName = WarCard;
 			productReference = BFB0A5F32620141200F3889A /* WarCard.app */;
 			productType = "com.apple.product-type.application";
@@ -226,6 +248,9 @@
 				Base,
 			);
 			mainGroup = BFB0A5EA2620141200F3889A;
+			packageReferences = (
+				BFD44EED2623FE450010E908 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = BFB0A5F42620141200F3889A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -244,6 +269,7 @@
 			files = (
 				BFB0A6032620141400F3889A /* LaunchScreen.storyboard in Resources */,
 				BFB0A6002620141400F3889A /* Preview Assets.xcassets in Resources */,
+				BFD44EF82623FEDB0010E908 /* 8123-winner.json in Resources */,
 				BFB0A5FD2620141400F3889A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,8 +297,10 @@
 			files = (
 				BFB0A5F72620141200F3889A /* AppDelegate.swift in Sources */,
 				BFB0A5F92620141200F3889A /* SceneDelegate.swift in Sources */,
+				BFD44EFD2623FF750010E908 /* LottieView.swift in Sources */,
 				BFB0A62A262024B900F3889A /* gameLogic.swift in Sources */,
 				BFB0A5FB2620141200F3889A /* ContentView.swift in Sources */,
+				BFD44F02262401780010E908 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +381,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -414,6 +443,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -601,6 +631,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BFD44EED2623FE450010E908 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BFD44EEE2623FE450010E908 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BFD44EED2623FE450010E908 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BFB0A5EB2620141200F3889A /* Project object */;
 }

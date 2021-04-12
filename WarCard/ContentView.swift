@@ -9,19 +9,25 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var playerCardNumber: Int = 3
-    @State var botCardNumber: Int = 4
+    @State private var playerCardNumber: Int = 3
+    @State private var botCardNumber: Int = 4
     @StateObject var gameLogic = GameLogic()
+    @State var isLoading = false
     
     var body: some View {
         ZStack {
-            Color.green.ignoresSafeArea()
+            Color(#colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1))
+                .ignoresSafeArea()
             VStack {
                 Image(uiImage: #imageLiteral(resourceName: "tfc_logo"))
                     .renderingMode(.template)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                
+                    .frame(height: 170)
+                Text("War Card Game")
+                    .foregroundColor(.white)
+                    .bold()
+                Divider()
                 Spacer()
                 HStack(spacing: 50) {
                     VStack {
@@ -29,7 +35,7 @@ struct ContentView: View {
                         Image("\(playerCardNumber)C")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 80, height: 150, alignment: .center)
+                            .frame(width: 90, height: 150, alignment: .center)
                     }
                     
                     VStack {
@@ -37,7 +43,7 @@ struct ContentView: View {
                         Image("\(botCardNumber)C")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 80, height: 150, alignment: .center)
+                            .frame(width: 90, height: 150, alignment: .center)
                     }
                 }
                 Spacer()
@@ -45,6 +51,11 @@ struct ContentView: View {
                     self.playerCardNumber = Int.random(in: 1...13)
                     self.botCardNumber = Int.random(in: 1...13)
                     gameLogic.compare(player: playerCardNumber, bot: botCardNumber)
+                    self.isLoading = true
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                        self.isLoading = false
+                    }
                 }, label: {
                     Image(uiImage: #imageLiteral(resourceName: "buttons167"))
                         .resizable()
@@ -57,17 +68,26 @@ struct ContentView: View {
                 HStack {
                     VStack {
                         Text("Player")
+                            .font(.title)
                             .padding()
-                        Text("\(gameLogic.playerNumber)").bold()
+                        Text("\(gameLogic.playerNumber)")
+                            .bold()
+                            .font(.title)
                     }
                     
                     VStack {
                         Text("Bot")
+                            .font(.title)
                             .padding()
-                        Text("\(gameLogic.botNumber)").bold()
+                        Text("\(gameLogic.botNumber)")
+                            .bold()
+                            .font(.title)
                     }
                 }
                 Spacer()
+            }
+            if isLoading {
+                LoadingView()
             }
         }
     }
